@@ -1,66 +1,114 @@
 .checkboxWrapper {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+	display: flex;
+	align-items: center;
+	gap: 12px;
 }
 
 .checkboxBox {
-  box-sizing: border-box;
-  width: 24px;
-  height: 24px;
-  border: 2px solid rgba(255,255,255,0.6);
-  border-radius: 4px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
+	box-sizing: border-box;
+	/* outer size */
+	width: 18px;
+	height: 18px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	/* draw gradient border only */
+	border: 2px solid transparent;
+	border-image: linear-gradient(
+			180deg,
+			var(--color-gradient-start) 0%,
+			var(--color-gradient-end) 100%
+		)
+		1;
+	border-radius: 0;
+	transition:
+		transform 120ms ease,
+		border 120ms ease;
+}
+
+/* inner box sits on top of gradient to create framed border effect */
+.checkboxInner {
+	/* smaller than outer so border shows through */
+	width: calc(100% - 4px);
+	height: calc(100% - 4px);
+	box-sizing: border-box;
+	background: var(--background);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 0;
+	transition:
+		background 220ms ease,
+		width 160ms ease,
+		height 160ms ease;
 }
 
 .checkboxBoxChecked {
-  background: linear-gradient(180deg, var(--color-gradient-start) 0%, var(--color-gradient-end) 100%);
-  border-color: transparent;
+	/* remove border so fill appears as full square */
+	border: none;
+}
+
+.checkboxBoxChecked .checkboxInner {
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(
+		180deg,
+		var(--color-gradient-start) 0%,
+		var(--color-gradient-end) 100%
+	);
 }
 
 .checkboxInput {
-  /* visually hide native input but keep accessibility */
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
-  width: 0;
-  height: 0;
+	/* visually hide native input but keep accessibility */
+	position: absolute;
+	opacity: 0;
+	pointer-events: none;
+	width: 0;
+	height: 0;
 }
 
 .checkboxLabel {
-  font-family: var(--font-inter);
-  color: var(--color-white);
+	font-family: var(--font-inter);
+	color: var(--color-white);
 }
 
 .checkboxTitle {
-  font-weight: 400;
-  font-size: 32px;
-  line-height: 130%;
-  text-transform: uppercase;
+	font-weight: 400;
+	font-size: 32px;
+	line-height: 130%;
+	text-transform: uppercase;
 }
 
 .checkboxNormal {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 130%;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  opacity: 0.5;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 130%;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	opacity: 0.5;
 }
 
 .checkboxDashedContainer {
-  box-sizing: border-box;
-  border: 1px dashed #9747FF;
-  border-radius: 5px;
-  padding: 12px;
-  display: inline-block;
+	box-sizing: border-box;
+	border: 1px dashed #9747ff;
+	border-radius: 5px;
+	padding: 12px;
+	display: inline-block;
 }
 
 .checkmark {
-  width: 12px;
-  height: 12px;
-  display: block;
+	width: 12px;
+	height: 12px;
+	display: block;
+	transform: scale(0.75);
+	opacity: 0;
+	transition:
+		transform 180ms cubic-bezier(0.2, 0.9, 0.2, 1),
+		opacity 160ms ease;
+}
+
+/* When box is checked, reveal the checkmark smoothly */
+.checkboxBoxChecked .checkmark {
+	transform: scale(1);
+	opacity: 1;
 }

@@ -1,0 +1,53 @@
+.inputRoot {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.inputBox {
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	padding: 15px;
+	gap: 10px;
+	width: 440px;
+	height: 51px;
+	border: 1px solid var(--color-black);
+	border-radius: 10px;
+	background: transparent;
+}
+
+.inputField {
+	flex: 1 1 auto;
+	width: 100%;
+	height: 100%;
+	font-family: var(--font-inter);
+	font-size: 16px;
+	line-height: 130%;
+	font-weight: 400;
+	color: var(--color-black);
+	background: transparent;
+	border: none;
+	outline: none;
+}
+
+.inputField::placeholder {
+	color: var(--color-black);
+	opacity: 0.5;
+}
+
+.inputBox:focus-within {
+	/* active state visually remains the same border per spec; add subtle transform */
+	box-shadow: 0 0 0 3px rgba(251, 134, 39, 0.06);
+}
+
+.inputDashedContainer {
+	box-sizing: border-box;
+	width: 480px;
+	height: 162px;
+	border: 1px dashed #9747ff;
+	border-radius: 5px;
+	padding: 12px;
+	display: inline-flex;
+	align-items: flex-start;
+}
