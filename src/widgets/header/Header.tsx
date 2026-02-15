@@ -17,7 +17,7 @@ export const Header: React.FC = () => {
 			<div className={styles.spacer} />
 			<div className={styles.actions}>
 				<Button variant='white' size='normal'>
-					<Link variant='title' href='#'>
+					<Link href='#'>
 						Связаться с нами
 					</Link>
 				</Button>

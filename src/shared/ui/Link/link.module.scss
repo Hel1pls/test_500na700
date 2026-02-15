@@ -1,35 +1,14 @@
 .link {
-	font-family: var(--font-inter);
-	font-style: normal;
-	text-transform: uppercase;
 	color: var(--color-white);
 	display: inline-block;
 	background: transparent;
 	border: none;
-	padding: 0;
-	cursor: pointer;
-	text-decoration: none;
-}
-
-.link--title {
-	font-weight: 400;
+   text-decoration: none;
+	font-weight: var(--fw-500);
 	font-size: var(--type-link-16);
-	line-height: 130%;
-}
 
-.link--normal {
-	font-weight: 400;
-	font-size: 16px;
-	line-height: 130%;
-	letter-spacing: 0.1em;
-	opacity: 1;
-}
-
-.link--muted {
-	opacity: 0.5;
-}
-
-.link--hoverable:hover {
-	opacity: 0.8;
-	text-decoration: underline;
+	/* Optional: muted state when explicitly requested */
+	.link--muted {
+		opacity: 0.5;
+	}
 }

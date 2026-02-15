@@ -12,17 +12,17 @@ export default function Home() {
 				
 
 				<div style={{ marginTop: 24 }}>
-					<Link variant='title' href='#'>
+					<Link href='#'>
 						Links
 					</Link>
 				</div>
 
 				<div style={{ marginTop: 12 }}>
-					<Link variant='normal' href='#'>
+					<Link href='#'>
 						Normal
 					</Link>
 					<span style={{ marginLeft: 16 }} />
-					<Link variant='normal' muted href='#'>
+					<Link muted href='#'>
 						Normal (muted)
 					</Link>
 				</div>

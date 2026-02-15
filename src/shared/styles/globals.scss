@@ -191,3 +191,16 @@ header {
 	text-transform: uppercase;
 	color: var(--color-white);
 }
+
+/* Font-weight utility classes (apply where needed) */
+/* Use these to override weight without duplicating size rules */
+.fw-regular {
+	font-weight: 400 !important;
+}
+.fw-medium {
+	font-weight: 500 !important;
+}
+.fw-semibold {
+	font-weight: 600 !important;
+}
+

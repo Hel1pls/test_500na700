@@ -7,48 +7,19 @@
 		var(--color-gradient-start) 0%,
 		var(--color-gradient-end) 100%
 	);
-	border-radius: 40px; /* outer radius */
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
+	position: relative;
+	border-radius: 40px;
 	cursor: pointer;
-	transition:
-		transform 80ms ease,
-		background 200ms ease;
+	transition: transform 80ms ease;
+   width: 181px;
+   height: 45px;
 }
 
 .btn:active {
 	transform: translateY(1px);
-}
-
-/* Variants */
-.btn--white {
-	color: var(--color-white);
-}
-
-.btn--black {
-	color: var(--color-black);
-}
-
-/* Hover uses gradient from globals */
-.btn--white:hover,
-.btn--black:hover {
-	background: linear-gradient(
-		180deg,
-		var(--color-gradient-start) 0%,
-		var(--color-gradient-end) 100%
-	);
-}
-
-/* Outline variant: outer shows gradient border, inner holds padding and background */
-.btn--outline {
-	/* make outer act as gradient frame */
-	padding: 2px; /* border thickness */
-	background: linear-gradient(
-		180deg,
-		var(--color-gradient-start) 0%,
-		var(--color-gradient-end) 100%
-	);
 }
 
 .btnInner {
@@ -56,63 +27,50 @@
 	align-items: center;
 	justify-content: center;
 	padding: 12px 20px;
-	border-radius: 40px; /* inner radius */
-	background: var(--background);
+	gap: 10px;
+	border-radius: 40px;
+	/* inner surface background controlled by variant variable */
+	background: var(--color-black, #0F0F17);
 	transition:
 		background 200ms ease,
-		color 200ms ease;
+		color 200ms ease,
+		box-shadow 120ms ease;
+	font-size: var(--type-link-16);
+   width: 181px;
 }
 
-/* On hover outline -> fill with gradient (inner becomes gradient) */
-.btn--outline:hover .btnInner {
-	background: linear-gradient(
-		180deg,
-		var(--color-gradient-start) 0%,
-		var(--color-gradient-end) 100%
-	);
-}
 
-/* Ensure outline inner text is visible on dark backgrounds */
-.btn--outline .btnInner {
-	color: var(--color-white);
-}
 
-/* Sizes */
-.btn--large .btnInner {
-	font-weight: 400;
-	font-size: 32px;
-	line-height: 130%;
-	text-transform: uppercase;
-}
 
-.btn--normal .btnInner {
-	font-weight: 500;
-	font-size: 16px;
-	line-height: 130%;
-	text-transform: uppercase;
-	letter-spacing: 0.1em;
-}
+/* Color variants (normal state text color) */
+// .btn--white {
+// 	/* white text variant: dark inner background */
+// 	--btn-inner-bg: #4b4b4b;
+// }
 
-/* make text color variant-specific inside inner */
 .btn--white .btnInner {
-	color: var(--color-white);
+	color: #ffffff;
+}
+
+.btn--black {
+	/* black text variant: light inner background */
+	--btn-inner-bg: #f3f4f6;
 }
 
 .btn--black .btnInner {
-	color: var(--color-black);
+	color: #0f0f17;
 }
 
-/* In case a dashed-outline variant is needed (from spec box example) */
+/* Dashed container example from spec (kept as separate utility) */
 .btn--outline-dashed {
 	border: 1px dashed #9747ff;
 	border-radius: 5px;
 }
 
-/* Hover behavior: inner fills with gradient */
+/* Hover: inner fills with gradient per Figma */
 .btn:hover .btnInner {
-	background: linear-gradient(
-		180deg,
-		var(--color-gradient-start) 0%,
-		var(--color-gradient-end) 100%
-	);
+	/* hover fills inner with gradient */
+	background: linear-gradient(180deg, #fb8627 0%, #f5bef6 100%);
+	color: #ffffff; /* ensure contrast on gradient */
+	box-shadow: 0 6px 20px rgba(251, 134, 39, 0.12);
 }
