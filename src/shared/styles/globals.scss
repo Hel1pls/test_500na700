@@ -1,0 +1,193 @@
+@import './_colors.scss';
+
+:root {
+	--background: #ffffff;
+	--foreground: #0f0f17;
+	--color-white: #{$color-white};
+	--color-gradient-start: #{$color-gradient-start};
+	--color-gradient-end: #{$color-gradient-end};
+	--color-black: #{$color-black};
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--background: #0a0a0a;
+		--foreground: #ededed;
+	}
+}
+
+body {
+	background: var(--background);
+	color: var(--foreground);
+	font-family:
+		var(--font-inter),
+		Inter,
+		system-ui,
+		-apple-system,
+		'Segoe UI',
+		Roboto,
+		'Helvetica Neue',
+		Arial;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1000;
+	background: var(--background);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.page-content {
+	padding-top: 72px;
+}
+
+.bg-gradient {
+	background: linear-gradient(
+		90deg,
+		var(--color-gradient-start),
+		var(--color-gradient-end)
+	);
+}
+
+.palette {
+	display: flex;
+	gap: 16px;
+}
+
+.palette .swatch {
+	width: 120px;
+	height: 120px;
+	border-radius: 4px;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+/* Typography utilities (based on provided specs) */
+
+/* Display / Large (64px) */
+.type-display-64 {
+	font-family:
+		var(--font-inter),
+		Inter,
+		system-ui,
+		-apple-system,
+		'Segoe UI',
+		Roboto,
+		'Helvetica Neue',
+		Arial;
+	font-weight: 500;
+	font-size: 64px;
+	line-height: 130%;
+	text-transform: uppercase;
+	color: var(--color-white);
+}
+
+/* Regular 24px */
+.type-regular-24 {
+	font-family: var(--font-inter);
+	font-weight: 400;
+	font-size: 24px;
+	line-height: 130%;
+	color: var(--color-white);
+}
+
+/* Link 24px (underlined, semi-transparent as in spec) */
+.type-link-24 {
+	font-family: var(--font-inter);
+	font-weight: 400;
+	font-size: 24px;
+	line-height: 130%;
+	color: var(--color-white);
+	text-decoration-line: underline;
+	opacity: 0.5;
+}
+
+/* Medium 24px (500) */
+.type-medium-24 {
+	font-family: var(--font-inter);
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 130%;
+	color: var(--color-white);
+}
+
+/* Semibold 24px (600) */
+.type-semibold-24 {
+	font-family: var(--font-inter);
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 130%;
+	color: var(--color-white);
+}
+
+/* H1 – 40px */
+.type-h1-40 {
+	font-family: var(--font-inter);
+	font-weight: 600;
+	font-size: 40px;
+	line-height: 110%;
+	text-transform: uppercase;
+	color: var(--color-white);
+}
+
+/* H2 – 24px */
+.type-h2-24 {
+	font-family: var(--font-inter);
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 110%;
+	text-transform: uppercase;
+	color: var(--color-white);
+}
+
+/* H3 – 20px */
+.type-h3-20 {
+	font-family: var(--font-inter);
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 110%;
+	text-transform: uppercase;
+	color: var(--color-white);
+}
+
+/* H4 – 16px */
+.type-h4-16 {
+	font-family: var(--font-inter);
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 110%;
+	text-transform: uppercase;
+	color: var(--color-white);
+}
+
+/* Text – 16px (regular) */
+.type-text-16 {
+	font-family: var(--font-inter);
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 130%;
+	color: var(--color-white);
+}
+
+/* Link – 16px (500) */
+.type-link-16 {
+	font-family: var(--font-inter);
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 130%;
+	color: var(--color-white);
+}
+
+/* Caption – 12px */
+.type-caption-12 {
+	font-family: var(--font-inter);
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 130%;
+	text-transform: uppercase;
+	color: var(--color-white);
+}

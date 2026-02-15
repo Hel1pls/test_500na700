@@ -1,0 +1,10 @@
+$color-white: #FFFFFF;
+$color-gradient-start: #FB8627;
+$color-gradient-end: #F5BEF6;
+$color-black: #0F0F17;
+$color-gray-700: #505050;
+
+// Utility mixin to produce gradient CSS
+@mixin gradient($from, $to, $deg: 90deg) {
+  background: linear-gradient($deg, $from 0%, $to 100%);
+}

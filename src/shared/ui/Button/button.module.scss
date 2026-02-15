@@ -1,0 +1,64 @@
+.btn {
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding: 12px 20px;
+	gap: 10px;
+	border-radius: 40px;
+	cursor: pointer;
+	transition:
+		background 200ms ease,
+		color 200ms ease,
+		transform 80ms ease;
+	font-family: var(--font-inter);
+	border: none;
+	background: transparent;
+}
+
+.btn:active {
+	transform: translateY(1px);
+}
+
+/* Variants */
+.btn--white {
+	color: var(--color-white);
+}
+
+.btn--black {
+	color: var(--color-black);
+}
+
+/* Hover uses gradient from globals */
+.btn--white:hover,
+.btn--black:hover {
+	background: linear-gradient(
+		180deg,
+		var(--color-gradient-start) 0%,
+		var(--color-gradient-end) 100%
+	);
+}
+
+/* Sizes */
+.btn--large {
+	font-weight: 400;
+	font-size: 32px;
+	line-height: 130%;
+	text-transform: uppercase;
+	color: var(--color-white);
+}
+
+.btn--normal {
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 130%;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+}
+
+/* In case a dashed-outline variant is needed (from spec box example) */
+.btn--outline-dashed {
+	border: 1px dashed #9747ff;
+	border-radius: 5px;
+}
