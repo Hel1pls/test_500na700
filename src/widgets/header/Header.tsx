@@ -2,6 +2,7 @@
 import React from 'react'
 import styles from './header.module.scss'
 import { Button } from '@shared/ui/Button'
+import { Link } from '@shared/ui/Link'
 
 export const Header: React.FC = () => {
 	return (
@@ -15,8 +16,10 @@ export const Header: React.FC = () => {
 			</div>
 			<div className={styles.spacer} />
 			<div className={styles.actions}>
-				<Button variant='white' size='normal' outline>
-					Связаться с нами
+				<Button variant='white' size='normal'>
+					<Link variant='title' href='#'>
+						Связаться с нами
+					</Link>
 				</Button>
 			</div>
 		</header>

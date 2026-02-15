@@ -9,9 +9,7 @@ export default function Home() {
 		<div>
 			<Header />
 			<main className='page-content'>
-				<Button variant='black' size='normal'>
-					Связаться с нами
-				</Button>
+				
 
 				<div style={{ marginTop: 24 }}>
 					<Link variant='title' href='#'>
