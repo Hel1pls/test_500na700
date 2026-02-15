@@ -1,0 +1,29 @@
+
+.newsSection {
+	padding: 0 40px;
+}
+
+.newsWrapper {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	align-content: flex-start;
+	gap: 20px;
+	width: 100%;
+	max-width: 1360px;
+	position: relative;
+}
+
+.newsTitle {
+	font-size: var(--type-h1-40, 40px);
+	margin-left: 0;
+	margin-bottom: 32px;
+}
+
+
+.loading {
+	color: #fff;
+	font-size: 24px;
+	padding: 40px;
+}

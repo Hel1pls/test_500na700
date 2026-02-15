@@ -1,43 +1,13 @@
 import { Header } from '@widgets/header'
-import { Button } from '@shared/ui/Button'
-import { Link } from '@shared/ui/Link'
-import { Checkbox } from '@shared/ui/Checkbox'
-import { Input } from '@shared/ui/Input'
+import { NewsPage } from '@pages/news/NewsPage'
+
 
 export default function Home() {
 	return (
 		<div>
 			<Header />
 			<main className='page-content'>
-				
-
-				<div style={{ marginTop: 24 }}>
-					<Link href='#'>
-						Links
-					</Link>
-				</div>
-
-				<div style={{ marginTop: 12 }}>
-					<Link href='#'>
-						Normal
-					</Link>
-					<span style={{ marginLeft: 16 }} />
-					<Link muted href='#'>
-						Normal (muted)
-					</Link>
-				</div>
-
-				<div style={{ marginTop: 28 }}>
-					<Checkbox label='Checkbox' muted />
-				</div>
-
-				<div style={{ marginTop: 28 }}>
-					<Input placeholder='E-mail' />
-				</div>
-
-				<div style={{ marginTop: 12 }}>
-					<Input placeholder='E-mail (active)' autoFocus />
-				</div>
+				<NewsPage />
 			</main>
 		</div>
 	)

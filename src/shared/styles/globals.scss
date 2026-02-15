@@ -1,4 +1,4 @@
-@import './_colors.scss';
+@use './_colors.scss' as *;
 
 :root {
 	--background: #ffffff;
@@ -39,7 +39,6 @@ header {
 	right: 0;
 	z-index: 1000;
 	background: var(--background);
-	border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .page-content {
