@@ -7,17 +7,20 @@ type Size = 'normal' | 'large'
 type Props = React.ButtonHTMLAttributes<HTMLButtonElement> & {
 	variant?: Variant
 	size?: Size
+	outline?: boolean
 }
 
 export const Button: React.FC<Props> = ({
 	variant = 'white',
 	size = 'normal',
+	outline = false,
 	className = '',
 	children,
 	...rest
 }) => {
 	const cls = [
 		styles.btn,
+		outline ? styles['btn--outline'] : '',
 		variant === 'white' ? styles['btn--white'] : styles['btn--black'],
 		size === 'large' ? styles['btn--large'] : styles['btn--normal'],
 		className,
@@ -27,7 +30,7 @@ export const Button: React.FC<Props> = ({
 
 	return (
 		<button className={cls} {...rest}>
-			{children}
+			<span className={styles.btnInner}>{children}</span>
 		</button>
 	)
 }

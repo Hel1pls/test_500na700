@@ -9,26 +9,26 @@
 	/* outer size */
 	width: 18px;
 	height: 18px;
+	padding: 2px; /* thickness of the visible frame */
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	/* draw gradient border only */
-	border: 2px solid transparent;
-	border-image: linear-gradient(
-			180deg,
-			var(--color-gradient-start) 0%,
-			var(--color-gradient-end) 100%
-		)
-		1;
+	/* outer gradient background - acts as frame */
+	background: linear-gradient(
+		180deg,
+		var(--color-gradient-start) 0%,
+		var(--color-gradient-end) 100%
+	);
 	border-radius: 0;
 	transition:
 		transform 120ms ease,
-		border 120ms ease;
+		background 120ms ease;
 }
 
 /* inner box sits on top of gradient to create framed border effect */
+
 .checkboxInner {
-	/* smaller than outer so border shows through */
+	/* inner sits on top of gradient frame */
 	width: calc(100% - 4px);
 	height: calc(100% - 4px);
 	box-sizing: border-box;
@@ -44,8 +44,7 @@
 }
 
 .checkboxBoxChecked {
-	/* remove border so fill appears as full square */
-	border: none;
+	/* when checked, inner fills whole area and outer gradient remains behind but not visible */
 }
 
 .checkboxBoxChecked .checkboxInner {

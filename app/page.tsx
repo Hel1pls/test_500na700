@@ -1,3 +1,4 @@
+import { Header } from '@widgets/header'
 import { Button } from '@shared/ui/Button'
 import { Link } from '@shared/ui/Link'
 import { Checkbox } from '@shared/ui/Checkbox'
@@ -6,7 +7,8 @@ import { Input } from '@shared/ui/Input'
 export default function Home() {
 	return (
 		<div>
-			<main>
+			<Header />
+			<main className='page-content'>
 				<Button variant='black' size='normal'>
 					Связаться с нами
 				</Button>

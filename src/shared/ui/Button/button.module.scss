@@ -40,6 +40,43 @@
 	);
 }
 
+/* Outline variant: outer shows gradient border, inner holds padding and background */
+.btn--outline {
+	/* make outer act as gradient frame */
+	padding: 2px; /* border thickness */
+	background: linear-gradient(
+		180deg,
+		var(--color-gradient-start) 0%,
+		var(--color-gradient-end) 100%
+	);
+}
+
+.btnInner {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 12px 20px;
+	border-radius: 40px;
+	background: var(--background);
+	transition:
+		background 200ms ease,
+		color 200ms ease;
+}
+
+/* On hover outline -> fill with gradient (inner becomes gradient) */
+.btn--outline:hover .btnInner {
+	background: linear-gradient(
+		180deg,
+		var(--color-gradient-start) 0%,
+		var(--color-gradient-end) 100%
+	);
+}
+
+/* Ensure outline inner text is visible on dark backgrounds */
+.btn--outline .btnInner {
+	color: var(--color-white);
+}
+
 /* Sizes */
 .btn--large {
 	font-weight: 400;
