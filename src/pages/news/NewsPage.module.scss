@@ -1,6 +1,6 @@
 
 .newsSection {
-	padding: 0 40px;
+	padding: 10px 40px;
 }
 
 .newsWrapper {
@@ -11,13 +11,12 @@
 	align-content: flex-start;
 	gap: 20px;
 	width: 100%;
-	max-width: 1360px;
 	position: relative;
 }
 
 .newsTitle {
 	font-size: var(--type-h1-40, 40px);
-	margin-left: 0;
+   padding-top: 0;
 	margin-bottom: 32px;
 }
 
