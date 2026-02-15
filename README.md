@@ -6,7 +6,7 @@ git remote add origin https://github.com/Hel1pls/test_500na700
 
 
 git add .
-git commit -m "creating a link"
+git commit -m "creating a checkbox"
 git push 
 
 

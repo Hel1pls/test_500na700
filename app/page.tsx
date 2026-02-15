@@ -1,5 +1,6 @@
 import { Button } from '@shared/ui/Button'
 import { Link } from '@shared/ui/Link'
+import { Checkbox } from '@shared/ui/Checkbox'
 
 export default function Home() {
 	return (
@@ -23,6 +24,10 @@ export default function Home() {
 					<Link variant='normal' muted href='#'>
 						Normal (muted)
 					</Link>
+				</div>
+
+				<div style={{ marginTop: 28 }}>
+					<Checkbox label="Checkbox" muted />
 				</div>
 			</main>
 		</div>

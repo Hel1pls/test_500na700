@@ -1,0 +1,66 @@
+.checkboxWrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.checkboxBox {
+  box-sizing: border-box;
+  width: 24px;
+  height: 24px;
+  border: 2px solid rgba(255,255,255,0.6);
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+.checkboxBoxChecked {
+  background: linear-gradient(180deg, var(--color-gradient-start) 0%, var(--color-gradient-end) 100%);
+  border-color: transparent;
+}
+
+.checkboxInput {
+  /* visually hide native input but keep accessibility */
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  width: 0;
+  height: 0;
+}
+
+.checkboxLabel {
+  font-family: var(--font-inter);
+  color: var(--color-white);
+}
+
+.checkboxTitle {
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 130%;
+  text-transform: uppercase;
+}
+
+.checkboxNormal {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+.checkboxDashedContainer {
+  box-sizing: border-box;
+  border: 1px dashed #9747FF;
+  border-radius: 5px;
+  padding: 12px;
+  display: inline-block;
+}
+
+.checkmark {
+  width: 12px;
+  height: 12px;
+  display: block;
+}
