@@ -111,26 +111,21 @@ const ContactPopup: React.FC = () => {
 								placeholder='Имя'
 								value={formData.name}
 								onChange={handleInputChange}
+								error={isSubmitted ? errors.name : ''}
 								required
 							/>
-							{isSubmitted && errors.name && (
-								<span className={styles.error}>{errors.name}</span>
-							)}
 						</div>
 
 						<div className={styles.fieldWrapper}>
-							<input
+							<Input
 								type='tel'
 								name='phone'
 								placeholder='Телефон'
-								className={styles.input}
 								value={formData.phone}
 								onChange={handleInputChange}
+								error={isSubmitted ? errors.phone : ''}
 								required
 							/>
-							{isSubmitted && errors.phone && (
-								<span className={styles.error}>{errors.phone}</span>
-							)}
 						</div>
 
 						<div className={styles.fieldWrapper}>
@@ -140,11 +135,9 @@ const ContactPopup: React.FC = () => {
 								placeholder='E-mail'
 								value={formData.email}
 								onChange={handleInputChange}
+								error={isSubmitted ? errors.email : ''}
 								required
 							/>
-							{isSubmitted && errors.email && (
-								<span className={styles.error}>{errors.email}</span>
-							)}
 						</div>
 					</div>
 

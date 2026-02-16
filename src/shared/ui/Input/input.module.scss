@@ -38,13 +38,26 @@
 	opacity: 0.5;
 }
 
-
 .inputBox:focus-within {
 	border: 1px solid var(--color-black);
 }
 
 .inputBox:focus-within .inputField::placeholder {
 	opacity: 1;
+}
+
+.inputBoxError {
+	border-color: #e63946;
+	box-shadow: 0 0 0 1px #e63946;
+}
+
+.errorMessage {
+	font-family: var(--font-inter), 'Inter', sans-serif;
+	font-size: 13px;
+	line-height: 120%;
+	color: #e63946;
+	margin-top: 6px;
+	font-weight: 500;
 }
 
 .inputLabel {
@@ -67,6 +80,3 @@
 	display: inline-flex;
 	align-items: flex-start;
 }
-
-
-
