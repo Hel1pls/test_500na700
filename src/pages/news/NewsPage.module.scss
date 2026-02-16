@@ -20,7 +20,7 @@
 }
 
 .loading {
-	color: #fff;
+	color: var(--color-white);
 	font-size: 24px;
 	padding: 40px;
 }
@@ -53,4 +53,3 @@
 		padding: 20px;
 	}
 }
-
