@@ -1,14 +1,14 @@
-import { Header } from '@widgets/header'
+import { Header, ContactPopup } from '@widgets/header'
 import { NewsPage } from '@pages/news/NewsPage'
-
 
 export default function Home() {
 	return (
-		<div>
+		<>
 			<Header />
+			<ContactPopup />
 			<main className='page-content'>
 				<NewsPage />
 			</main>
-		</div>
+		</>
 	)
 }

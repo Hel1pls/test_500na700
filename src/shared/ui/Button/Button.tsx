@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import styles from './button.module.scss'
 
@@ -18,8 +19,8 @@ export const Button: React.FC<Props> = ({
 }) => {
 	const cls = [
 		styles.btn,
-		variant === 'white' ? styles['btn--white'] : styles['btn--black'],
-		size === 'large' ? styles['btn--large'] : styles['btn--normal'],
+		styles[`btn--${variant}`],
+		styles[`btn--${size}`],
 		className,
 	]
 		.filter(Boolean)
@@ -27,7 +28,7 @@ export const Button: React.FC<Props> = ({
 
 	return (
 		<button className={cls} {...rest}>
-			<span className={styles.btnInner}>{children}</span>
+			{children}
 		</button>
 	)
 }

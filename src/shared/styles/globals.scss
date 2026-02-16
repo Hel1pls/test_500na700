@@ -7,6 +7,10 @@
 	--color-gradient-start: #{$color-gradient-start};
 	--color-gradient-end: #{$color-gradient-end};
 	--color-black: #{$color-black};
+	--type-h1-40: 40px;
+	--type-h2-24: 24px;
+	--type-text-16: 16px;
+	--type-caption-12: 12px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -40,8 +44,6 @@ header {
 	z-index: 1000;
 	background: var(--background);
 }
-
-
 
 .bg-gradient {
 	background: linear-gradient(
@@ -200,4 +202,3 @@ header {
 .fw-semibold {
 	font-weight: 600 !important;
 }
-

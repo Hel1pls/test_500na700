@@ -1,76 +1,64 @@
+$gradient: linear-gradient(180deg, #FB8627 0%, #F5BEF6 100%);
+
 .btn {
-	box-sizing: border-box;
-	/* outer gradient frame */
-	padding: 2px; /* frame thickness */
-	background: linear-gradient(
-		180deg,
-		var(--color-gradient-start) 0%,
-		var(--color-gradient-end) 100%
-	);
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
 	position: relative;
-	border-radius: 40px;
-	cursor: pointer;
-	transition: transform 80ms ease;
-   width: 181px;
-   height: 45px;
-}
-
-.btn:active {
-	transform: translateY(1px);
-}
-
-.btnInner {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
 	padding: 12px 20px;
 	gap: 10px;
+
+	height: 45px;
+	min-width: 181px;
+
 	border-radius: 40px;
-	/* inner surface background controlled by variant variable */
-	background: var(--color-black, #0F0F17);
-	transition:
-		background 200ms ease,
-		color 200ms ease,
-		box-shadow 120ms ease;
-	font-size: var(--type-link-16);
-   width: 181px;
+	cursor: pointer;
+
+	font-family: 'Inter', sans-serif;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 130%;
+
+	border: 2px solid transparent;
+
+	background:
+		linear-gradient(var(--btn-bg), var(--btn-bg)) padding-box,
+		$gradient border-box;
+
+	transition: background 200ms ease, color 200ms ease, transform 80ms ease;
 }
 
+/* ===== VARIANTS ===== */
 
-
-
-/* Color variants (normal state text color) */
-// .btn--white {
-// 	/* white text variant: dark inner background */
-// 	--btn-inner-bg: #4b4b4b;
-// }
-
-.btn--white .btnInner {
+.btn--white {
+	--btn-bg: #0F0F17;
 	color: #ffffff;
 }
 
 .btn--black {
-	/* black text variant: light inner background */
-	--btn-inner-bg: #f3f4f6;
+	--btn-bg: #ffffff;
+	color: #0F0F17;
 }
 
-.btn--black .btnInner {
-	color: #0f0f17;
+/* ===== HOVER ===== */
+
+.btn--white:hover {
+	background:
+		$gradient padding-box,
+		$gradient border-box;
+
+	color: #ffffff;
 }
 
-/* Dashed container example from spec (kept as separate utility) */
-.btn--outline-dashed {
-	border: 1px dashed #9747ff;
-	border-radius: 5px;
+.btn--black:hover {
+	background:
+		$gradient padding-box,
+		$gradient border-box;
+
+	color: #0F0F17; /* по макету черный текст */
 }
 
-/* Hover: inner fills with gradient per Figma */
-.btn:hover .btnInner {
-	/* hover fills inner with gradient */
-	background: linear-gradient(180deg, #fb8627 0%, #f5bef6 100%);
-	color: #ffffff; /* ensure contrast on gradient */
-	box-shadow: 0 6px 20px rgba(251, 134, 39, 0.12);
-}
+
+
+
+

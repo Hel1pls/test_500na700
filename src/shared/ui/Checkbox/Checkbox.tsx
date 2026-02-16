@@ -27,34 +27,35 @@ export const Checkbox: React.FC<Props> = ({
 					type='checkbox'
 					checked={checked}
 					onChange={e => setChecked(e.target.checked)}
-					aria-checked={checked}
 				/>
 
 				<span
-					className={`${styles.checkboxBox} ${checked ? styles.checkboxBoxChecked : ''}`}
+					className={`${styles.checkboxBox} ${
+						checked ? styles.checkboxBoxChecked : ''
+					}`}
 				>
-					<span className={styles.checkboxInner}>
-						{checked ? (
-							<svg
-								className={styles.checkmark}
-								viewBox='0 0 24 24'
-								fill='none'
-								xmlns='http://www.w3.org/2000/svg'
-							>
-								<path
-									d='M5 12l4 4L19 6'
-									stroke='#fff'
-									strokeWidth='2'
-									strokeLinecap='round'
-									strokeLinejoin='round'
-								/>
-							</svg>
-						) : null}
-					</span>
+					{checked && (
+						<svg
+							className={styles.checkmark}
+							viewBox='0 0 24 24'
+							fill='none'
+							xmlns='http://www.w3.org/2000/svg'
+						>
+							<path
+								d='M5 12l4 4L19 6'
+								stroke='white'
+								strokeWidth='2'
+								strokeLinecap='round'
+								strokeLinejoin='round'
+							/>
+						</svg>
+					)}
 				</span>
 
 				<span
-					className={`${styles.checkboxLabel} ${title ? styles.checkboxTitle : ''} ${muted ? styles.checkboxNormal : ''}`}
+					className={`${styles.checkboxLabel} ${
+						title ? styles.checkboxTitle : ''
+					} ${muted ? styles.checkboxNormal : ''}`}
 				>
 					{label}
 				</span>

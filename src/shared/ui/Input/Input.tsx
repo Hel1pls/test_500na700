@@ -8,10 +8,12 @@ type Props = React.InputHTMLAttributes<HTMLInputElement> & {
 }
 
 export const Input: React.FC<Props> = ({ label, dashed = false, ...rest }) => {
+	const wrapper = dashed ? styles.inputDashedContainer : ''
+
 	return (
-		<div className={dashed ? styles.inputDashedContainer : ''}>
+		<div className={wrapper}>
 			<div className={styles.inputRoot}>
-				{label ? <div className={styles.inputLabel}>{label}</div> : null}
+				{label && <div className={styles.inputLabel}>{label}</div>}
 				<div className={styles.inputBox}>
 					<input className={styles.inputField} {...rest} />
 				</div>

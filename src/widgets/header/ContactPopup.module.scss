@@ -1,0 +1,89 @@
+.overlay {
+	position: fixed;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 2000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.popup {
+	width: 520px;
+	background: #fff;
+	border-radius: 20px;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 40px;
+	gap: 40px;
+	position: relative;
+}
+
+
+.titleBlock {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 440px;
+}
+
+.close {
+  width: 24px;       
+  height: 24px;
+  background: none;
+  border: none;
+  position: relative;  /* оставляем для псевдоэлементов крестика */
+  cursor: pointer;
+}
+
+.close::before,
+.close::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;            
+  height: 100%;          
+  background: #0f0f17;
+  transform-origin: center;
+}
+
+.close::before {
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.close::after {
+  transform: translateX(-50%) rotate(-45deg);
+}
+
+
+
+.title {
+	font-family: 'Inter', sans-serif;
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 110%;
+	text-transform: uppercase;
+	color: #0f0f17;
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+
+}
+
+
+.inputsWrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 10px; 
+
+}
+
+.submitBtn {
+	width: 126px;
+}
