@@ -8,6 +8,8 @@ type Props = {
 	muted?: boolean
 	dashed?: boolean
 	defaultChecked?: boolean
+	checked?: boolean
+	onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
 export const Checkbox: React.FC<Props> = ({
@@ -16,8 +18,20 @@ export const Checkbox: React.FC<Props> = ({
 	muted = false,
 	dashed = false,
 	defaultChecked = false,
+	checked,
+	onChange,
 }) => {
-	const [checked, setChecked] = useState<boolean>(!!defaultChecked)
+	const [internalChecked, setInternalChecked] =
+		useState<boolean>(!!defaultChecked)
+	const isControlled = checked !== undefined
+	const currentChecked = isControlled ? checked : internalChecked
+
+	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		if (!isControlled) {
+			setInternalChecked(e.target.checked)
+		}
+		onChange?.(e)
+	}
 
 	return (
 		<div className={dashed ? styles.checkboxDashedContainer : ''}>
@@ -25,16 +39,16 @@ export const Checkbox: React.FC<Props> = ({
 				<input
 					className={styles.checkboxInput}
 					type='checkbox'
-					checked={checked}
-					onChange={e => setChecked(e.target.checked)}
+					checked={currentChecked}
+					onChange={handleChange}
 				/>
 
 				<span
 					className={`${styles.checkboxBox} ${
-						checked ? styles.checkboxBoxChecked : ''
+						currentChecked ? styles.checkboxBoxChecked : ''
 					}`}
 				>
-					{checked && (
+					{currentChecked && (
 						<svg
 							className={styles.checkmark}
 							viewBox='0 0 24 24'

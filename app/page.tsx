@@ -1,14 +1,5 @@
-import { Header, ContactPopup } from '@widgets/header'
-import { NewsPage } from '@pages/news/NewsPage'
+import { redirect } from 'next/navigation'
 
 export default function Home() {
-	return (
-		<>
-			<Header />
-			<ContactPopup />
-			<main className='page-content'>
-				<NewsPage />
-			</main>
-		</>
-	)
+	redirect('/news')
 }
