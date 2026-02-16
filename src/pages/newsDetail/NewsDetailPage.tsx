@@ -1,7 +1,6 @@
 'use client'
 import React, { useState, useEffect } from 'react'
 import styles from './NewsDetailPage.module.scss'
-import { Footer } from '@/src/widgets/footer'
 import { NewsDetailContent } from '@/src/entities/news/ui'
 
 export interface NewsDetailPageProps {
@@ -34,8 +33,8 @@ export const NewsDetailPage: React.FC<NewsDetailPageProps> = ({ id }) => {
 	}, [id])
 
 	return (
-		<div className={styles.container}>
-			<main className={styles.content}>
+		<main className={styles.container}>
+			<div className={styles.content}>
 				<div className={styles.detailsWrapper}>
 					{loading ? (
 						<div className={styles.loading}>Загрузка...</div>
@@ -55,9 +54,8 @@ export const NewsDetailPage: React.FC<NewsDetailPageProps> = ({ id }) => {
 						<div className={styles.error}>Новость не найдена</div>
 					)}
 				</div>
-			</main>
-			<Footer />
-		</div>
+			</div>
+		</main>
 	)
 }
 
