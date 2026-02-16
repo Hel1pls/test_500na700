@@ -80,3 +80,29 @@
 	display: inline-flex;
 	align-items: flex-start;
 }
+
+/* Mobile styles for screens 480px and below */
+@media (max-width: 480px) {
+	.inputRoot {
+		width: 100%;
+	}
+
+	.inputBox {
+		width: 100%;
+		box-sizing: border-box;
+		height: 51px;
+		padding: 15px;
+		border-radius: 10px;
+	}
+
+	.inputField {
+		font-size: 16px;
+		line-height: 130%;
+	}
+
+	.inputDashedContainer {
+		width: 100%;
+		height: auto;
+		padding: 12px;
+	}
+}
