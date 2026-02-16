@@ -24,7 +24,7 @@ export const NewsPage: React.FC = () => {
 					setNews(data)
 					setLoading(false)
 				})
-		}, 800)
+		}, 10)
 	}, [])
 
 	return (
@@ -38,6 +38,7 @@ export const NewsPage: React.FC = () => {
 						news.map(item => (
 							<NewsCard
 								key={item.id}
+								id={item.id}
 								title={item.title}
 								description={item.description}
 								date={item.date}

@@ -1,7 +1,10 @@
+'use client'
 import React from 'react'
+import { useRouter } from 'next/navigation'
 import styles from './NewsCard.module.scss'
 
 export interface NewsCardProps {
+	id: number
 	title: string
 	description: string
 	date: string
@@ -9,11 +12,14 @@ export interface NewsCardProps {
 }
 
 export const NewsCard: React.FC<NewsCardProps> = ({
+	id,
 	title,
 	description,
 	date,
 	image,
 }) => {
+	const router = useRouter()
+
 	// Максимальная длина описания (примерно как в json)
 	const MAX_DESC = 110
 	const shortDescription =
@@ -21,8 +27,12 @@ export const NewsCard: React.FC<NewsCardProps> = ({
 			? description.slice(0, MAX_DESC).trim() + '...'
 			: description
 
+	const handleClick = () => {
+		router.push(`/news/${id}`)
+	}
+
 	return (
-		<div className={styles.card}>
+		<div className={styles.card} onClick={handleClick}>
 			<div className={styles.image}>
 				<img src={image} alt={title} />
 			</div>
