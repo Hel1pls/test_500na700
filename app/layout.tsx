@@ -1,6 +1,8 @@
+'use client'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import '../src/shared/styles/globals.scss'
+// import { Footer } from '@/src/widgets/footer'
 
 const inter = Inter({
 	variable: '--font-inter',
@@ -8,10 +10,10 @@ const inter = Inter({
 	display: 'swap',
 })
 
-export const metadata: Metadata = {
-	title: '500na700 Test',
-	description: 'Тестовое задание — верстка и компоненты',
-}
+// export const metadata: Metadata = {
+// 	title: '500na700 Test',
+// 	description: 'Тестовое задание — верстка и компоненты',
+// }
 
 export default function RootLayout({
 	children,
@@ -20,7 +22,10 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='ru'>
-			<body className={`${inter.variable} antialiased`}>{children}</body>
+			<body className={`${inter.variable} antialiased`}>
+				{children}
+				{/* <Footer /> */}
+			</body>
 		</html>
 	)
 }

@@ -6,7 +6,7 @@ git remote add origin https://github.com/Hel1pls/test_500na700
 
 creating a
 git add .
-git commit -m "creating a mobile news"
+git commit -m "creating a footer"
 git push 
 
 
