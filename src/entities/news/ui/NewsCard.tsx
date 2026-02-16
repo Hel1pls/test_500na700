@@ -1,4 +1,5 @@
 'use client'
+
 import React from 'react'
 import { useRouter } from 'next/navigation'
 import styles from './NewsCard.module.scss'
@@ -20,8 +21,8 @@ export const NewsCard: React.FC<NewsCardProps> = ({
 }) => {
 	const router = useRouter()
 
-	// Максимальная длина описания (примерно как в json)
 	const MAX_DESC = 110
+
 	const shortDescription =
 		description.length > MAX_DESC
 			? description.slice(0, MAX_DESC).trim() + '...'
@@ -36,10 +37,16 @@ export const NewsCard: React.FC<NewsCardProps> = ({
 			<div className={styles.image}>
 				<img src={image} alt={title} />
 			</div>
+
 			<div className={styles.content}>
-				<h2 className={styles.title}>{title}</h2>
+				<h2 className={styles.title}>
+					<span className={styles.titleNormal}>{title}</span>
+					<span className={styles.titleGradient}>{title}</span>
+				</h2>
+
 				<div className={styles.description}>{shortDescription}</div>
 			</div>
+
 			<div className={styles.date}>{date}</div>
 		</div>
 	)
