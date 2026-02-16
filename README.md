@@ -6,7 +6,7 @@ git remote add origin https://github.com/Hel1pls/test_500na700
 
 creating a
 git add .
-git commit -m "button animation lite fix"
+git commit -m "theam fix"
 git push 
 
 

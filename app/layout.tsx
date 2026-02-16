@@ -10,10 +10,7 @@ const inter = Inter({
 	display: 'swap',
 })
 
-// export const metadata: Metadata = {
-// 	title: '500na700 Test',
-// 	description: 'Тестовое задание — верстка и компоненты',
-// }
+
 
 export default function RootLayout({
 	children,

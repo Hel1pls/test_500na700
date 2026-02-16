@@ -1,8 +1,8 @@
 @use './_colors.scss' as *;
 
 :root {
-	--background: #ffffff;
-	--foreground: #0f0f17;
+	--background: #0f0f17;
+	--foreground: #ffffff;
 	--color-white: #{$color-white};
 	--color-gradient-start: #{$color-gradient-start};
 	--color-gradient-end: #{$color-gradient-end};
@@ -14,17 +14,10 @@
 	--type-h3-20: 20px;
 }
 
-@media (prefers-color-scheme: dark) {
-	:root {
-		--background: #0a0a0a;
-		--foreground: #ededed;
-	}
-}
-
 body {
 	margin: 0;
 	padding: 0;
-	background: var(--background);
+	background: var(--background) !important;
 	color: var(--foreground);
 	font-family:
 		var(--font-inter),
