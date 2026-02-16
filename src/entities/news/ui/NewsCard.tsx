@@ -15,7 +15,7 @@ export const NewsCard: React.FC<NewsCardProps> = ({
 	image,
 }) => {
 	// Максимальная длина описания (примерно как в json)
-	const MAX_DESC = 125
+	const MAX_DESC = 110
 	const shortDescription =
 		description.length > MAX_DESC
 			? description.slice(0, MAX_DESC).trim() + '...'

@@ -29,7 +29,7 @@ export const NewsPage: React.FC = () => {
 
 	return (
 		<section className={styles.newsSection}>
-			<main className='page-content' style={{ position: 'relative' }}>
+			<main className={styles.pageContent} style={{ position: 'relative' }}>
 				<h1 className={styles.newsTitle}>Новости</h1>
 				<div className={styles.newsWrapper}>
 					{loading ? (
