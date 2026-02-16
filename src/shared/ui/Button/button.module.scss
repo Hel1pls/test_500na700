@@ -25,9 +25,27 @@ $gradient: linear-gradient(180deg, #fb8627 0%, #f5bef6 100%);
 		$gradient border-box;
 
 	transition:
-		background 200ms ease,
-		color 200ms ease,
-		transform 80ms ease;
+		color 300ms ease,
+		transform 120ms ease;
+
+	isolation: isolate; // фикс слоя
+}
+
+/* ===== ВНУТРЕННИЙ ГРАДИЕНТ ===== */
+
+.btn::after {
+	content: '';
+	position: absolute;
+
+	inset: 2px; // важно — меньше чем border
+	border-radius: 38px; // 40px - border
+
+	background: $gradient;
+
+	opacity: 0;
+	transition: opacity 350ms ease;
+
+	z-index: -1; // теперь текст всегда сверху
 }
 
 /* ===== VARIANTS ===== */
@@ -44,18 +62,15 @@ $gradient: linear-gradient(180deg, #fb8627 0%, #f5bef6 100%);
 
 /* ===== HOVER ===== */
 
-.btn--white:hover {
-	background:
-		$gradient padding-box,
-		$gradient border-box;
-
-	color: var(--color-white);
+.btn:hover::after {
+	opacity: 1;
 }
 
-.btn--black:hover {
-	background:
-		$gradient padding-box,
-		$gradient border-box;
-
-	color: var(--color-black);
+.btn:active {
+	transform: scale(0.97);
 }
+
+
+
+
+
