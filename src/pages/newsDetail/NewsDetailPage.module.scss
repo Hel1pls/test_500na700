@@ -44,12 +44,11 @@
 	padding: 40px;
 }
 
-/* Mobile styles for screens 480px and below */
 @media (max-width: 480px) {
 	.container {
 		padding-top: 83px;
-      padding-bottom: 83px;
-      min-height: 80vh;
+		padding-bottom: 83px;
+		min-height: 80vh;
 	}
 
 	.content {

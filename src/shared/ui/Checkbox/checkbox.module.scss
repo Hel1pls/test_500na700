@@ -13,8 +13,6 @@
 	height: 0;
 }
 
-/* ===== БАЗОВЫЙ КВАДРАТ ===== */
-
 .checkboxBox {
 	position: relative;
 	width: 18px;
@@ -25,25 +23,21 @@
 	justify-content: center;
 	flex-shrink: 0;
 
-	/* создаем градиентный border */
 	background: linear-gradient(
 		180deg,
 		var(--color-gradient-start) 0%,
 		var(--color-gradient-end) 100%
 	);
+		padding: 1px;
 
-	padding: 1px; // толщина границы
 }
 
-/* Внутренний слой чтобы создать border effect */
 .checkboxBox::before {
 	content: '';
 	position: absolute;
 	inset: 1px;
 	background: var(--color-white);
 }
-
-/* ===== CHECKED ===== */
 
 .checkboxBoxChecked {
 	background: linear-gradient(
@@ -55,10 +49,10 @@
 }
 
 .checkboxBoxChecked::before {
-	display: none; // убираем внутреннюю подложку
+	display: none;
 }
 
-/* ===== ГАЛОЧКА ===== */
+
 
 .checkmark {
 	width: 14px;
@@ -78,7 +72,6 @@
 	transform: scale(1);
 }
 
-/* Mobile styles for screens 480px and below */
 @media (max-width: 480px) {
 	.checkboxWrapper {
 		display: flex;
@@ -98,7 +91,6 @@
 	}
 }
 
-/* ===== LABEL ===== */
 .checkboxLabel {
 	color: var(--color-black);
 	opacity: 0.5;

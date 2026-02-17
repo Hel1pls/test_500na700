@@ -56,13 +56,12 @@
 	padding: 0;
 }
 
-/* Mobile styles for screens 480px and below */
 @media (max-width: 480px) {
 	.container {
 		width: calc(100% - 20px);
-      margin-top: 40px;
-      margin-left: 20px;
-      margin-right: 20px;
+		margin-top: 40px;
+		margin-left: 20px;
+		margin-right: 20px;
 		gap: 10px;
 	}
 

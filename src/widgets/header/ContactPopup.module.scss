@@ -33,7 +33,7 @@
 	height: 24px;
 	background: none;
 	border: none;
-	position: relative; /* оставляем для псевдоэлементов крестика */
+	position: relative;
 	cursor: pointer;
 }
 
@@ -96,7 +96,6 @@
 	width: 126px;
 }
 
-/* Mobile styles for screens 480px and below */
 @media (max-width: 480px) {
 	.overlay {
 		align-items: flex-start;

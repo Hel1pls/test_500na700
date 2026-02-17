@@ -83,7 +83,6 @@ const ContactPopup: React.FC = () => {
 		const hasErrors = Object.values(newErrors).some(error => error !== '')
 		if (!hasErrors) {
 			console.log('Отправленные данные:', formData)
-			// Сброс формы и закрытие попапа (по желанию)
 			setFormData({ name: '', phone: '', email: '', consent: false })
 			setOpen(false)
 			setIsSubmitted(false)

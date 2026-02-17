@@ -3,11 +3,10 @@
 	display: inline-block;
 	background: transparent;
 	border: none;
-   text-decoration: none;
+	text-decoration: none;
 	font-weight: var(--fw-500);
 	font-size: var(--type-link-16);
 
-	/* Optional: muted state when explicitly requested */
 	.link--muted {
 		opacity: 0.5;
 	}
